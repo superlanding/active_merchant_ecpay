@@ -1,5 +1,12 @@
+require 'action_view'
 require "active_merchant_ecpay/version"
+require 'active_merchant'
+require 'offsite_payments'
 
-module ActiveMerchantEcpay
-  # Your code goes here...
+module OffsitePayments
+  module Integrations
+    autoload :Ecpay, 'offsite_payments/integrations/ecpay'
+  end
 end
+
+ActionView::Base.send(:include, OffsitePayments::ActionViewHelper)
