@@ -3,4 +3,5 @@ require "rspec/core/rake_task"
 
 RSpec::Core::RakeTask.new(:spec)
 
+task :t => :spec
 task :default => :spec
